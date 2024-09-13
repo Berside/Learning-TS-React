@@ -8,6 +8,7 @@ import useThemeMode from './hooks/useThemeMode';
 import LoginForm from './components/LoginForm';
 import RegForm from './components/RegForm';
 import { HeaderContainerStyle, HeaderContentStyle } from './styles/header';
+import Gheader from './components/GHeader';
 
 
 function App() {
@@ -15,17 +16,7 @@ function App() {
   const themeMode = theme === 'light' ? lightTheme : darkTheme;
 
   return (
-    <ThemeContext>
-      <ThemeProvider theme={themeMode}>
-        <GlobalStyle />
-        <div style={HeaderContainerStyle}>
-            <header style={HeaderContainerStyle}>
-                <TogglerButton themeToggler={themeToggler} />
-            </header>
-        </div>
-        <RegForm />
-      </ThemeProvider>
-    </ThemeContext>
+    <Gheader/>
   );
 }
 
